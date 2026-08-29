@@ -95,6 +95,59 @@ During the TryHackMe Network Services lab, I used Nmap to identify SMB and then 
 I used `enum4linux` to gather information and `smbclient` to investigate available shares.
 
 I learned that SMB share enumeration can reveal useful information about how a server is configured.
+## My Practical Workflow
+
+During the TryHackMe Network Services room, I followed this general
+workflow when investigating the SMB service.
+
+### 1. Identify SMB
+
+First, I used Nmap to check whether SMB-related ports were open.
+
+```bash
+nmap -p 139,445 -sV <TARGET_IP>
+2. Enumerate the SMB Service
+
+After identifying SMB, I used enum4linux to gather additional
+information about the SMB server.
+
+enum4linux <TARGET_IP>
+3. Enumerate SMB Shares
+
+I then used smbclient to check the available SMB shares.
+
+smbclient -L //<TARGET_IP>/
+4. Connect to an Accessible Share
+
+After identifying an accessible share, I used smbclient to connect
+to it.
+
+smbclient //<TARGET_IP>/<SHARE_NAME>
+5. Investigate the Share
+
+Once connected, I used commands such as:
+
+ls
+pwd
+cd
+get
+
+to navigate and investigate the contents of the share.
+
+Workflow Summary
+Nmap
+  ↓
+Identify SMB
+  ↓
+enum4linux
+  ↓
+Enumerate SMB Shares
+  ↓
+smbclient
+  ↓
+Connect to Accessible Share
+  ↓
+Investigate Share Contents
 
 ## Security Considerations
 
