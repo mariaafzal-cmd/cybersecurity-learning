@@ -148,23 +148,7 @@ smbclient
 Connect to Accessible Share
   ↓
 Investigate Share Contents
-Security Considerations
-SMB services should not be unnecessarily exposed to untrusted networks.
-Misconfigured shares may expose sensitive files.
-Anonymous access should be disabled when it is not required.
-Weak authentication can increase the risk of unauthorized access.
-SMB implementations should be kept updated and securely configured.
-What I Learned
-SMB is commonly associated with TCP ports 445 and 139.
-Nmap can be used to identify SMB services.
-enum4linux can help gather information about SMB/Samba systems.
-smbclient can be used to enumerate and interact with SMB shares.
-Share permissions are important when assessing SMB security.
-Anonymous access should be checked during authorized enumeration.
-Practice
 
-I practiced these SMB enumeration techniques in an authorized
-TryHackMe training environment as part of the Network Services room.
 
 
 
