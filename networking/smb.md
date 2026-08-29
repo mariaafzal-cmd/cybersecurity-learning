@@ -149,6 +149,8 @@ Connect to Accessible Share
   ↓
 Investigate Share Contents
 
+
+
 ## Security Considerations
 
 * SMB services should not be unnecessarily exposed to untrusted networks.
