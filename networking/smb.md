@@ -95,10 +95,10 @@ During the TryHackMe Network Services lab, I used Nmap to identify SMB and then 
 I used `enum4linux` to gather information and `smbclient` to investigate available shares.
 
 I learned that SMB share enumeration can reveal useful information about how a server is configured.
+
 ## My Practical Workflow
 
-During the TryHackMe Network Services room, I followed this general
-workflow when investigating the SMB service.
+During the TryHackMe Network Services room, I followed this general workflow when investigating the SMB service.
 
 ### 1. Identify SMB
 
@@ -106,35 +106,48 @@ First, I used Nmap to check whether SMB-related ports were open.
 
 ```bash
 nmap -p 139,445 -sV <TARGET_IP>
-2. Enumerate the SMB Service
+```
 
-After identifying SMB, I used enum4linux to gather additional
-information about the SMB server.
+### 2. Enumerate the SMB Service
 
+After identifying SMB, I used `enum4linux` to gather additional information about the SMB server.
+
+```bash
 enum4linux <TARGET_IP>
-3. Enumerate SMB Shares
+```
 
-I then used smbclient to check the available SMB shares.
+### 3. Enumerate SMB Shares
 
+I then used `smbclient` to check the available SMB shares.
+
+```bash
 smbclient -L //<TARGET_IP>/
-4. Connect to an Accessible Share
+```
 
-After identifying an accessible share, I used smbclient to connect
-to it.
+### 4. Connect to an Accessible Share
 
+After identifying an accessible share, I used `smbclient` to connect to it.
+
+```bash
 smbclient //<TARGET_IP>/<SHARE_NAME>
-5. Investigate the Share
+```
+
+### 5. Investigate the Share
 
 Once connected, I used commands such as:
 
+```text
 ls
 pwd
 cd
 get
+```
 
 to navigate and investigate the contents of the share.
 
-Workflow Summary
+### Workflow Summary
+
+```text
 Nmap
   ↓
 Identify SMB
@@ -148,22 +161,28 @@ smbclient
 Connect to Accessible Share
   ↓
 Investigate Share Contents
+```
 
-Security Considerations
-SMB services should not be unnecessarily exposed to untrusted networks.
-Misconfigured shares may expose sensitive files.
-Anonymous access should be disabled when it is not required.
-Weak authentication can increase the risk of unauthorized access.
-SMB implementations should be kept updated and securely configured.
-What I Learned
-SMB is commonly associated with TCP ports 445 and 139.
-Nmap can be used to identify SMB services.
-enum4linux can help gather information about SMB/Samba systems.
-smbclient can be used to enumerate and interact with SMB shares.
-Share permissions are important when assessing SMB security.
-Anonymous access should be checked during authorized enumeration.
-Practice
+## Security Considerations
 
-I practiced these SMB enumeration techniques in an authorized TryHackMe training environment as part of the Network Services room.
+* SMB services should not be unnecessarily exposed to untrusted networks.
+* Misconfigured shares may expose sensitive files.
+* Anonymous access should be disabled when it is not required.
+* Weak authentication can increase the risk of unauthorized access.
+* SMB implementations should be kept updated and securely configured.
+
+## What I Learned
+
+* SMB is commonly associated with TCP ports 445 and 139.
+* Nmap can be used to identify SMB services.
+* `enum4linux` can help gather information about SMB/Samba systems.
+* `smbclient` can be used to enumerate and interact with SMB shares.
+* Share permissions are important when assessing SMB security.
+* Anonymous access should be checked during authorized enumeration.
+
+## Practice
+
+I practiced these SMB enumeration techniques in an authorized TryHackMe training environment as part of the **Network Services** room.
+
 
 
