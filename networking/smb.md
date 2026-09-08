@@ -183,6 +183,20 @@ Investigate Share Contents
 ## Practice
 
 I practiced these SMB enumeration techniques in an authorized TryHackMe training environment as part of the **Network Services** room.
+## Practical Lab
+
+For a hands-on SMB exploitation exercise, see my
+[Metasploitable 2 SMB Case Study](smb/metasploitable2.md).
+
+The lab covers:
+
+- Nmap SMB enumeration
+- enum4linux enumeration
+- Anonymous SMB access
+- SMB share enumeration
+- smbclient
+- Privilege escalation
+- Root privilege verification
 
 
 
