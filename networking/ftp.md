@@ -64,11 +64,6 @@ Anonymous access is important during enumeration because it may allow access to 
 * Why anonymous FTP access should be checked during enumeration.
 * Why unencrypted FTP is considered insecure.
 
-## Practice
-
-## Practice
-
-I practiced these FTP concepts in an authorized TryHackMe training environment as part of the **Network Services** room. I also practiced FTP enumeration and exploitation on an intentionally vulnerable **Metasploitable 2** machine in my local virtual lab.
 ## Practical Lab — Metasploitable 2
 
 I practiced FTP enumeration and exploitation on an intentionally vulnerable **Metasploitable 2** machine in my local virtual lab.
