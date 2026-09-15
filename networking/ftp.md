@@ -133,7 +133,7 @@ I used the relevant Metasploit module against the intentionally vulnerable Metas
 
 ```text
 Module:
-<INSERT EXACT METASPLOIT MODULE>
+exploit/unix/ftp/vsftpd_234_backdoor
 ```
 
 The exploitation was successful in the authorized lab environment.
