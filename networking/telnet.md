@@ -61,4 +61,4 @@ When encountering an exposed Telnet service during an authorized assessment, I w
 
 ## Practice
 
-I practiced Telnet enumeration and interaction in an authorized TryHackMe training environment as part of the **Network Services** room.
+I practiced these FTP concepts in an authorized TryHackMe training environment as part of the **Network Services** room. I also practiced FTP enumeration and exploitation on an intentionally vulnerable **Metasploitable 2** machine in my local virtual lab.
